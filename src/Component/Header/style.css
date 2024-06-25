@@ -1,0 +1,11 @@
+header {
+    font-size: large;
+    top: 0;
+    position: absolute;
+    z-index: 10;
+    padding: 10px 12px;
+    background: whitesmoke;
+    box-shadow: 1px 1px 1px 1px #bec4c766;
+    width: -webkit-fill-available;
+    text-align: center;
+}
