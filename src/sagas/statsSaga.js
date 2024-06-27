@@ -4,7 +4,7 @@ import { IMAGES } from "../constants";
 import { fetchImageStats } from "../api";
 import { loadImageStats, setImageStats, setImageStatsError } from "../actions";
 
-function* handleStatsRequest(id) {
+export function* handleStatsRequest(id) {
     // handle continues hitting of failure on server - for loop
     for (let i = 0; i < 3; i++) {
         try {
