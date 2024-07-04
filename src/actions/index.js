@@ -1,4 +1,4 @@
-import { IMAGES, STATS } from "../constants";
+import { CART, IMAGES, STATS } from "../constants";
 
 const loadImages = () => ({
     type: IMAGES.LOAD,
@@ -30,4 +30,18 @@ const setImageStatsError = id => ({
     id,
 });
 
-export { loadImages, setImages, setError, loadImageStats, setImageStats, setImageStatsError }
+const cartAdd = images => ({
+    type: CART.ADD,
+    images
+});
+
+const cartRemove = id => ({
+    type: CART.REMOVE,
+    id
+});
+
+const cartEmpty = () => ({
+    type: CART.EMPTY,
+});
+
+export { loadImages, setImages, setError, loadImageStats, setImageStats, setImageStatsError, cartAdd, cartRemove, cartEmpty }

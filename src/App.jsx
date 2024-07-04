@@ -2,8 +2,10 @@
 import { Provider } from 'react-redux'
 import Header from './Component/Header/index'
 import ImageGrid from './Component/ImageGrid/index'
+import CartDetails from './Component/Cart/cartDetails.jsx'
 import { Fragment } from 'react';
-import configureStore from './store'
+import configureStore from './store';
+import { Route, Routes, } from 'react-router-dom';
 
 const store = configureStore();
 
@@ -12,7 +14,10 @@ function App() {
     <Provider store={store}>
       <Fragment>
         <Header />
-        <ImageGrid />
+        <Routes>
+          <Route path='/' element={<ImageGrid />}></Route>
+          <Route path='/cart' element={<CartDetails />}></Route>
+        </Routes>
       </Fragment>
     </Provider>
   )

@@ -10,4 +10,10 @@ const STATS = {
     LOAD_FAIL: 'STATS_LOAD_FAIL',
 }
 
-export { IMAGES, STATS };
+const CART = {
+    ADD: 'ADD_TO_CART',
+    REMOVE: 'REMOVE_FROM_CART',
+    EMPTY: 'EMPTY_CART',
+}
+
+export { IMAGES, STATS, CART };

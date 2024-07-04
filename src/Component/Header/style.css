@@ -1,11 +1,47 @@
-header {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: large;
     top: 0;
     position: absolute;
     z-index: 10;
-    padding: 10px 12px;
+    padding: 14px 12px;
     background: whitesmoke;
     box-shadow: 1px 1px 1px 1px #bec4c766;
     width: -webkit-fill-available;
-    text-align: center;
+    text-align: center;   
+    
+    span:first-child {
+        margin: 0 auto;
+    }
+}
+
+.cart-container {
+    display: flex;
+    float: right;
+    margin-right: 10px;
+
+    .count {
+        background: #6cfa65;
+        width: 20px;
+        border-radius: 20px;
+        height: 20px;
+        padding: 4px;
+        margin-top: -9px;
+    }
+
+
+    .round {
+        background: #bec4c7c9;
+        height: 34px;
+        width: 35px;
+        border-radius: 10px;
+        margin-top: -5px;
+        padding-right: 5px;
+
+        img {
+            object-fit: fill;
+        }
+    }
 }

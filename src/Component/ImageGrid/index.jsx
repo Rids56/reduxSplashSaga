@@ -3,6 +3,7 @@ import './style.css';
 import { connect } from 'react-redux';
 import { loadImages } from '../../actions';
 import Stats from '../Stats';
+import Cart from '../Cart';
 
 const ImageGrid = (props) => {
     // // part 1 & 2 start
@@ -20,10 +21,10 @@ const ImageGrid = (props) => {
     // }, [])
     // // part 1 & 2 end
 
-    useEffect(() => props.loadImages, [])
-
     const { images, error, isLoading, loadImages, imageStats } = props;
     const finalImg = images?.flat();
+    useEffect(() => props.loadImages, []);
+
     return (
         <div className='content'>
             <div className='grid'>
@@ -36,6 +37,7 @@ const ImageGrid = (props) => {
                         )}`}
                     >
                         <Stats stats={imageStats[image.id]} />
+                        <Cart cartImages={image} />
 
                         <img
                             src={image.urls.small}
@@ -50,18 +52,19 @@ const ImageGrid = (props) => {
             </div>)}
             <button
                 className='button'
-                onClick={!isLoading && loadImages}
+                onClick={!isLoading ? loadImages : undefined}
                 disabled={isLoading}
             >{isLoading ? 'Loading...' : 'More Images'}</button>
         </div>
     )
 }
 
-const mapStateToProps = ({ isLoading, images, error, imageStats }) => ({
+const mapStateToProps = ({ isLoading, images, error, imageStats, cartImages }) => ({
     isLoading,
     images,
     error,
     imageStats,
+    cartImages,
 });
 
 const mapDispatchToProps = dispatch => ({
